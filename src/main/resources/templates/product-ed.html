@@ -10,32 +10,32 @@
 <h1 style="text-align: center">Detalles del Producto</h1>
 <div class="container text-center mt-5">
 
-    <!-- Form to create a new product -->
-    <form th:action="@{/products/newProduct}" method="post" th:object="${products}">
+    <!-- Form to edit the product -->
+    <form th:action="@{/products/{id}/edit(id=${product.id})}" method="post">
         <table class="table">
             <thead>
             <tr>
                 <th>Nombre del Producto</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
-                <!-- <th>Imagen</th>-->
+               <!-- <th>Imagen</th>-->
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>
                     <label>
-                        <input type="text" th:field="*{title}" name="title">
+                        <input type="text" th:field="${product.title}" name="name">
                     </label>
                 </td>
                 <td>
                     <label>
-                        <input type="text" th:field="*{price}" name="price">
+                        <input type="text" th:field="${product.price}" name="price">
                     </label>
                 </td>
                 <td>
                     <label>
-                        <input type="text" th:field="*{quantity}" name="quantity">
+                        <input type="text" th:field="${product.quantity}" name="quantity">
                     </label>
                 </td>
                 <td>
